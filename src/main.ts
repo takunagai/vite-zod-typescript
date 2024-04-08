@@ -5,7 +5,11 @@ const UserSchema = z.object({
     username: z.string(),
 })
 
-const user = { username: 'John' }
+type User = {
+    username: string;
+}
+
+const user: User = { username: 'John' }
 
 const result = UserSchema.parse(user) // 数値だとエラーが throw される
 console.log(result)
